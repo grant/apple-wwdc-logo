@@ -15,6 +15,7 @@ $(function () {
     [254, 136, 59]
   ];
 
+  // Creates the background in the .background div
   function createBackground () {
     $background = $('.background');
     $newBackground = $('<div/>');
@@ -25,7 +26,8 @@ $(function () {
         // Calculate properties
 
         // add color distributed uniformly along x axis
-        var color = rainbow[Math.floor((x/numCols) * rainbow.length)];
+        var colorIndex = (x/numCols) * (rainbow.length - 1) + 0.001;
+        var color = colorBlend(colorIndex);
         var gridWidth = (100/numCols);
         var gridWidthString = gridWidth + '%';
         var blockWidth = 50;
@@ -47,7 +49,7 @@ $(function () {
           width: blockWidthString,
           marginLeft: marginWidthString,
           marginTop: marginWidthString,
-          marginBottom: marginWidthString,
+          marginBottom: marginWidthString
         });
 
         $blockArea.html($block);
@@ -56,6 +58,19 @@ $(function () {
     }
 
     $background.html($newBackground.html());
+  }
+
+  // Gets a blend of two colors based off of the rainbow
+  // e.g. colorBlend(1.4) returns a weighted color mix between rainbow[1] and rainbow[2]
+  function colorBlend (colorIndex) {
+    var weight1 = colorIndex - Math.floor(colorIndex);
+    var weight2 = 1 - weight1;
+    var color1 = rainbow[Math.ceil(colorIndex)];
+    var color2 = rainbow[Math.floor(colorIndex)];
+    var newColor = color1.map(function(_, i) {
+      return Math.round((color1[i] * weight1) + (color2[i] * weight2));
+    });
+    return newColor;
   }
 
   // Gets the color as a string in 'rgb(r,g,b)' format
