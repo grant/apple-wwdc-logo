@@ -28,22 +28,26 @@ $(function () {
         var color = rainbow[Math.floor((x/numCols) * rainbow.length)];
         var gridWidth = (100/numCols);
         var gridWidthString = gridWidth + '%';
-        var blockWidth = gridWidth/2;
-        // var paddingWidth = (gridWidth - blockWidth)/2;
-        var paddingWidthString = gridWidth + '%';
+        var blockWidth = 50;
+        var blockWidthString = blockWidth + '%';
+        var marginWidth = (100 - blockWidth)/2;
+        var marginWidthString = marginWidth + '%';
         
         // Create elements
         var $blockArea = $('<div>').addClass('blockArea');
         $blockArea.css({
           width: gridWidthString,
-          paddingBottom: paddingWidthString
+          paddingBottom: gridWidthString
         });
 
         var $block = $('<div>').addClass('block');
 
         $block.css({
           backgroundColor: getRGBString(color),
-          // width: blockWidth
+          width: blockWidthString,
+          marginLeft: marginWidthString,
+          marginTop: marginWidthString,
+          marginBottom: marginWidthString,
         });
 
         $blockArea.html($block);
