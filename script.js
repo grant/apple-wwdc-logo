@@ -22,18 +22,32 @@ $(function () {
     // Create and style blocks
     for (var y = 0; y < numRows; ++y) {
       for (var x = 0; x < numCols; ++x) {
-        var $block = $('<div>').addClass('block');
+        // Calculate properties
 
         // add color distributed uniformly along x axis
         var color = rainbow[Math.floor((x/numCols) * rainbow.length)];
-        var width = (100/numCols) + '%';
-        $block.css({
-          backgroundColor: getRGBString(color),
-          width: width,
-          paddingBottom: width
+        var gridWidth = (100/numCols);
+        var gridWidthString = gridWidth + '%';
+        var blockWidth = gridWidth/2;
+        // var paddingWidth = (gridWidth - blockWidth)/2;
+        var paddingWidthString = gridWidth + '%';
+        
+        // Create elements
+        var $blockArea = $('<div>').addClass('blockArea');
+        $blockArea.css({
+          width: gridWidthString,
+          paddingBottom: paddingWidthString
         });
 
-        $newBackground.append($block);
+        var $block = $('<div>').addClass('block');
+
+        $block.css({
+          backgroundColor: getRGBString(color),
+          // width: blockWidth
+        });
+
+        $blockArea.html($block);
+        $newBackground.append($blockArea);
       }
     }
 

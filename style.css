@@ -48,8 +48,17 @@ table {
   box-sizing: border-box;
 }
 
-.block {
+.blockArea {  
   vertical-align: top;
   display: inline-block;
   height: 0;
+  position: relative;
+}
+
+.block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
