@@ -26,8 +26,11 @@ $(function () {
 
         // add color distributed uniformly along x axis
         var color = rainbow[Math.floor((x/numCols) * rainbow.length)];
+        var width = (100/numCols) + '%';
         $block.css({
-          backgroundColor: getRGBString(color)
+          backgroundColor: getRGBString(color),
+          width: width,
+          paddingBottom: width
         });
 
         $newBackground.append($block);
