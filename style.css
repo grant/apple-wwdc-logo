@@ -48,6 +48,10 @@ table {
   box-sizing: border-box;
 }
 
+.background {
+  padding: 2%;
+}
+
 .blockArea {  
   vertical-align: top;
   display: inline-block;
@@ -61,5 +65,5 @@ table {
   left: 0;
   bottom: 0;
   right: 0;
-  border-radius: 20%;
+  border-radius: 25%;
 }

@@ -30,7 +30,7 @@ $(function () {
         var color = colorBlend(colorIndex);
         var gridWidth = (100/numCols);
         var gridWidthString = gridWidth + '%';
-        var blockWidth = 50;
+        var blockWidth = 90;
         var blockWidthString = blockWidth + '%';
         var marginWidth = (100 - blockWidth)/2;
         var marginWidthString = marginWidth + '%';
