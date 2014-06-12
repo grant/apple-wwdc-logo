@@ -3,6 +3,7 @@ $(function () {
   var numCols = 40;
   var numRows = 20;
 
+  // Colors from left to right
   var rainbow = [
     [87, 247, 70],
     [0, 215, 166],
@@ -14,6 +15,13 @@ $(function () {
     [254, 95, 77],
     [254, 136, 59]
   ];
+
+  // The points that are white
+  var whitePoints = [
+    [0.5, 0.5]
+  ];
+
+  var whitePointRadius = 0.1;
 
   // Creates the background in the .background div
   function createBackground () {
