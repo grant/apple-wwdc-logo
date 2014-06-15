@@ -1,7 +1,7 @@
 $(function () {
 
   var numCols = 40;
-  var numRows = 20;
+  var numRows = 30;
 
   // Colors from left to right
   var rainbow = [
@@ -31,7 +31,7 @@ $(function () {
     // Create white space start points
     var whiteSpaceRange = [];
     var whiteSpacePaddingRange = 0.2; // 0 to 1
-    var sizeGradientRange = 0.1; // 0 to 1
+    var sizeGradientRange = 0.15; // 0 to 1
     var sizeGradientBlocks = Math.floor(numRows * sizeGradientRange); // num blocks for the gradient
     for (var xPos = 0; xPos < numCols; ++xPos) {
       var topYPercent = Math.random() * whiteSpacePaddingRange;
@@ -45,19 +45,17 @@ $(function () {
       var range = whiteSpaceRange[x];
       var top = range[0];
       var bot = range[1];
-      if (range[0] < y) {
+      if (y < top || y > bot) {
         return 0;
-      } else if (range[1] < y) {
+      } else {
         // in between top and bottom
-        if (y - range[0] < sizeGradientBlocks) {
-          return 100;
-        } else if (range[1] - y < sizeGradientBlocks) {
-          return 100;
+        if (y - top < sizeGradientBlocks) {
+          return 90 * (y - top) / sizeGradientBlocks;
+        } else if (bot - y < sizeGradientBlocks) {
+          return 90 * (bot - y) / sizeGradientBlocks;
         } else {
           return 90;
         }
-      } else {
-        return 0;
       }
     }
 
