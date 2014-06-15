@@ -84,11 +84,12 @@ table {
 
 .title {
   position: absolute;
-  width: 40%;
+  width: 56%;
   height: 20%;
   padding: 5px;
+  padding-top: 10px;
   top: 40%;
-  left: 30%;
+  left: 22%;
   font-family: Helvetica Neue;
   font-weight: 100;
   background-color: #62f754;

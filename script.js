@@ -1,6 +1,6 @@
 $(function () {
 
-  var numCols = 50;
+  var numCols = 40;
   var numRows = 30;
 
   // Colors from left to right
@@ -18,7 +18,7 @@ $(function () {
 
   // Text area (make sure this is the same as the css)
   var textArea = {
-    x: [0.3, 0.7],
+    x: [0.22, 0.78],
     y: [0.4, 0.6]
   };
 
@@ -134,7 +134,7 @@ $(function () {
   }
 
   createBackground();
-  $('.title').fitText(0.36);
+  $('.title').fitText(0.43);
   // $(window).on('resize.title orientationchange.title', function () {
   //   console.log('hi');
   // });
