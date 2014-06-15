@@ -16,6 +16,12 @@ $(function () {
     [254, 136, 59]
   ];
 
+  // Text area (make sure this is the same as the css)
+  var textArea = {
+    x: [0.3, 0.7],
+    y: [0.4, 0.6]
+  };
+
   // Creates the background in the .background div
   function createBackground () {
     $background = $('.background');
@@ -45,6 +51,16 @@ $(function () {
       var range = whiteSpaceRange[x];
       var top = range[0];
       var bot = range[1];
+      var xPercent = x/(numCols - 1);
+      var yPercent = y/(numRows - 1);
+
+      // In text area
+      if (xPercent > textArea.x[0] && xPercent < textArea.x[1] &&
+        yPercent > textArea.y[0] && yPercent < textArea.y[1]) {
+        return 0;
+      }
+
+      // In legal area
       if (y < top || y > bot) {
         return 0;
       } else {

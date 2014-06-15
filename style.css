@@ -67,3 +67,29 @@ table {
   right: 0;
   border-radius: 25%;
 }
+
+/* WWDC14 */
+
+.titleArea {
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  left: 30%;
+  font-family: Helvetica Neue;
+  font-weight: 100;
+  font-size: 6em;
+  background-color: #62f754;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #62f754), color-stop(25%, #307df9), color-stop(50%, #c638aa), color-stop(75%, #ff3463), color-stop(100%, #ff8542));
+  background-image: -webkit-linear-gradient(-360deg, #62f754, #307df9, #c638aa, #ff3463, #ff8542);
+  background-image: linear-gradient(90deg,#62f754, #307df9, #c638aa, #ff3463, #ff8542);
+  display: inline-block;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 100% 200%;
+  background-position: 50% 90%;
+  background-repeat: repeat;
+  text-align: center;
+  margin: 0 auto;
+}
