@@ -1,6 +1,6 @@
 # Apple WWDC Logo
 
-![Apple WWDC 14](https://cloud.githubusercontent.com/assets/744973/3280143/d781ce42-f448-11e3-978b-c6c88792b318.png)
+![Apple WWDC 14](https://cloud.githubusercontent.com/assets/744973/3280152/9f7f97ee-f449-11e3-8667-f7e0958ec8ba.png)
 
 Apple's WWDC logo made with HTML + CSS + JS.
 
