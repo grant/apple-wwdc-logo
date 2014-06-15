@@ -28,6 +28,12 @@ $(function () {
     $background = $('.background');
     $newBackground = $('<div/>');
 
+    // Create white space start points
+    var whiteSpaceRange = [];
+    for (var xPos = 0; xPos < numCols; ++xPos) {
+
+    }
+
     // Create and style blocks
     for (var y = 0; y < numRows; ++y) {
       for (var x = 0; x < numCols; ++x) {
