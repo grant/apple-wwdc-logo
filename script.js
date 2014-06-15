@@ -30,8 +30,19 @@ $(function () {
 
     // Create white space start points
     var whiteSpaceRange = [];
+    var whiteSpacePaddingRange = 0.2; // 0 to 1
     for (var xPos = 0; xPos < numCols; ++xPos) {
+      var topYPercent = Math.random() * whiteSpacePaddingRange;
+      var bottomYPercent = 1 - Math.random() * whiteSpacePaddingRange;
+      var topY = numRows * topYPercent;
+      var bottomY = numRows * bottomYPercent;
+      whiteSpaceRange[xPos] = [topY, bottomY];
+    }
 
+    function getBlockWidth (x, y) {
+      // console.log(x);
+      // console.log(y);
+      return 90;
     }
 
     // Create and style blocks
@@ -44,7 +55,7 @@ $(function () {
         var color = colorBlend(colorIndex);
         var gridWidth = (100/numCols);
         var gridWidthString = gridWidth + '%';
-        var blockWidth = 90;
+        var blockWidth = getBlockWidth(x, y);
         var blockWidthString = blockWidth + '%';
         var marginWidth = (100 - blockWidth)/2;
         var marginWidthString = marginWidth + '%';
