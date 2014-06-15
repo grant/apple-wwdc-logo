@@ -134,4 +134,8 @@ $(function () {
   }
 
   createBackground();
+  $('.title').fitText(0.36);
+  // $(window).on('resize.title orientationchange.title', function () {
+  //   console.log('hi');
+  // });
 });
