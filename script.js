@@ -30,12 +30,19 @@ $(function () {
 
     // Create white space start points
     var whiteSpaceRange = [];
-    var whiteSpacePaddingRange = 0.2; // 0 to 1
+    var whiteSpacePaddingRange = 0.15; // 0 to 1
     var sizeGradientRange = 0.15; // 0 to 1
     var sizeGradientBlocks = Math.floor(numRows * sizeGradientRange); // num blocks for the gradient
     for (var xPos = 0; xPos < numCols; ++xPos) {
       var topYPercent = Math.random() * whiteSpacePaddingRange;
       var bottomYPercent = 1 - Math.random() * whiteSpacePaddingRange;
+
+      // taper out the edges
+      var xPercent = xPos/(numCols - 1);
+      var extraWeight = 1 - Math.cos(Math.abs(xPercent - 0.5));
+      topYPercent = topYPercent + extraWeight;
+      bottomYPercent = bottomYPercent - extraWeight;
+
       var topY = Math.floor(numRows * topYPercent);
       var bottomY = Math.floor(numRows * bottomYPercent);
       whiteSpaceRange[xPos] = [topY, bottomY];
@@ -50,9 +57,9 @@ $(function () {
       } else {
         // in between top and bottom
         if (y - top < sizeGradientBlocks) {
-          return 90 * (y - top) / sizeGradientBlocks;
+          return 90 * (y - top) / sizeGradientBlocks + 5;
         } else if (bot - y < sizeGradientBlocks) {
-          return 90 * (bot - y) / sizeGradientBlocks;
+          return 90 * (bot - y) / sizeGradientBlocks + 5;
         } else {
           return 90;
         }
