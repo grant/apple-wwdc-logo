@@ -16,13 +16,6 @@ $(function () {
     [254, 136, 59]
   ];
 
-  // The points that are white
-  var whitePoints = [
-    [0.5, 0.5]
-  ];
-
-  var whitePointRadius = 0.1;
-
   // Creates the background in the .background div
   function createBackground () {
     $background = $('.background');
