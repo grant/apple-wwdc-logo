@@ -1,6 +1,6 @@
 $(function () {
 
-  var numCols = 40;
+  var numCols = 50;
   var numRows = 30;
 
   // Colors from left to right

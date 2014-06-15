@@ -48,6 +48,10 @@ table {
   box-sizing: border-box;
 }
 
+.logo {
+  position: relative;
+}
+
 .background {
   padding: 0%;
 }
@@ -78,22 +82,14 @@ table {
   bottom: 0;
 }
 
-.titleArea {
-  position: fixed;
+.title {
+  position: absolute;
   display: inline-block;
   width: 100%;
-  padding-bottom: 30%;
-}
-
-h1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 40%;
+  height: 20%;
   font-family: Helvetica Neue;
   font-weight: 100;
-  font-size: 6em;
   background-color: #62f754;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #62f754), color-stop(25%, #307df9), color-stop(50%, #c638aa), color-stop(75%, #ff3463), color-stop(100%, #ff8542));
   background-image: -webkit-linear-gradient(-360deg, #62f754, #307df9, #c638aa, #ff3463, #ff8542);
