@@ -70,13 +70,27 @@ table {
 
 /* WWDC14 */
 
+.titleContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .titleArea {
-  position: relative;
+  position: fixed;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 30%;
 }
 
 h1 {
   position: absolute;
-  left: 30%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   font-family: Helvetica Neue;
   font-weight: 100;
   font-size: 6em;
