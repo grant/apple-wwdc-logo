@@ -31,18 +31,34 @@ $(function () {
     // Create white space start points
     var whiteSpaceRange = [];
     var whiteSpacePaddingRange = 0.2; // 0 to 1
+    var sizeGradientRange = 0.1; // 0 to 1
+    var sizeGradientBlocks = Math.floor(numRows * sizeGradientRange); // num blocks for the gradient
     for (var xPos = 0; xPos < numCols; ++xPos) {
       var topYPercent = Math.random() * whiteSpacePaddingRange;
       var bottomYPercent = 1 - Math.random() * whiteSpacePaddingRange;
-      var topY = numRows * topYPercent;
-      var bottomY = numRows * bottomYPercent;
+      var topY = Math.floor(numRows * topYPercent);
+      var bottomY = Math.floor(numRows * bottomYPercent);
       whiteSpaceRange[xPos] = [topY, bottomY];
     }
 
     function getBlockWidth (x, y) {
-      // console.log(x);
-      // console.log(y);
-      return 90;
+      var range = whiteSpaceRange[x];
+      var top = range[0];
+      var bot = range[1];
+      if (range[0] < y) {
+        return 0;
+      } else if (range[1] < y) {
+        // in between top and bottom
+        if (y - range[0] < sizeGradientBlocks) {
+          return 100;
+        } else if (range[1] - y < sizeGradientBlocks) {
+          return 100;
+        } else {
+          return 90;
+        }
+      } else {
+        return 0;
+      }
     }
 
     // Create and style blocks
